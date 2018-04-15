@@ -41,7 +41,7 @@ app.use((0, _cors2.default)());
 dbProvider.init();
 
 app.get('/', function (req, res) {
-  return res.send('OK');
+  return res.send("It's rest API for Fipman project.");
 });
 
 // Init routes;
