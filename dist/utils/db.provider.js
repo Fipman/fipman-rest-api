@@ -13,8 +13,8 @@ var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var connectionString = _config2.default.mongodb_connection;
-var dbName = _config2.default.mongodb_db;
+var connectionString = process.env.MONGO_CONNECTION || _config2.default.mongodb_connection;
+var dbName = process.env.MONGO_DATABASE || _config2.default.mongodb_db;
 var db = null;
 
 var init = function init() {

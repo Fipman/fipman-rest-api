@@ -41,13 +41,13 @@ app.use((0, _cors2.default)());
 dbProvider.init();
 
 app.get('/', function (req, res) {
-  return res.send("It's rest API for Fipman project.");
+  return res.send('OK');
 });
 
 // Init routes;
 (0, _routes2.default)(app);
 
-var port = _config2.default.port || 8081;
+var port = process.env.API_PORT || _config2.default.port || 8081;
 app.listen(port, function () {
   return console.log('Server has been started on port ' + port);
 });
