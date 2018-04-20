@@ -1,3 +1,3 @@
 #!/bin/bash
-cd /var/api
-pm2 restart all
+cd /var/fipman/rest-api/
+pm2 restart rest-api

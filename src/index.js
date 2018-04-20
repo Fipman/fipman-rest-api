@@ -20,5 +20,5 @@ app.get('/', (req, res) => res.send('OK'));
 // Init routes;
 routes(app);
 
-const port = process.env.API_PORT || config.port || 8081;
+const port = config.port || 8081;
 app.listen(port, () => console.log(`Server has been started on port ${port}`));

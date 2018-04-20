@@ -47,7 +47,7 @@ app.get('/', function (req, res) {
 // Init routes;
 (0, _routes2.default)(app);
 
-var port = process.env.API_PORT || _config2.default.port || 8081;
+var port = _config2.default.port || 8081;
 app.listen(port, function () {
   return console.log('Server has been started on port ' + port);
 });

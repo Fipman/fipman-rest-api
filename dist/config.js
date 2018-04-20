@@ -1,13 +1,18 @@
 'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+if (process.env.NODE_ENV === "development") {
+    module.exports = require('../config/dev.env');
+} else {
+    var _process$env = process.env,
+        PORT = _process$env.PORT,
+        MONGODB_CONNECTION = _process$env.MONGODB_CONNECTION,
+        MONGODB_DATABASE = _process$env.MONGODB_DATABASE;
 
-var _env = require('./env.json');
+    var configs = require('../config/prod.env');
 
-var _env2 = _interopRequireDefault(_env);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = _env2.default;
+    module.exports = {
+        port: PORT || configs.port,
+        mongodb_connection: MONGODB_CONNECTION || configs.mongodb_connection,
+        mongodb_database: MONGODB_CONNECTION || configs.mongodb_database
+    };
+}
